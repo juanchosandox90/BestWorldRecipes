@@ -3,4 +3,6 @@
     <string name="menu_recipes_option">Recipes</string>
     <string name="menu_favorites_option">Favorites</string>
     <string name="menu_joke_option">Joke</string>
+    <string name="floating_action_button_desc">floatingactionbutton</string>
+    <string name="image_error_internet_description">errordescription</string>
 </resources>
