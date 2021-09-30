@@ -5,4 +5,9 @@
     <string name="menu_joke_option">Joke</string>
     <string name="floating_action_button_desc">floatingactionbutton</string>
     <string name="image_error_internet_description">errordescription</string>
+    <string name="recipe_image_view_desc">recipeimageviewdesc</string>
+    <string name="heart_icon_desc">hearticon</string>
+    <string name="clock_icon_desc">clockicon</string>
+    <string name="vegan_icon_desc">veganicon</string>
+    <string name="no_internet_connection_text">No internet conection</string>
 </resources>
