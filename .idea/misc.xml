@@ -5,11 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_joke.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/drawable/ic_menubook.xml" value="0.23177083333333334" />
+        <entry key="app/src/main/res/drawable/ic_restaurant.xml" value="0.2212962962962963" />
         <entry key="app/src/main/res/drawable/ic_start.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.215625" />
         <entry key="app/src/main/res/layout/fragment_favorites_receipes.xml" value="0.215625" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.215625" />
-        <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.215625" />
+        <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.10526315789473684" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.215625" />
       </map>
     </option>
