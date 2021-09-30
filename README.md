@@ -2,7 +2,7 @@
  This Android App shows a list of the best recipes in the world consuming an API. 
 
 
-#JSON Response Example For Spoonacular. With this example response and using the Plugin
+## JSON Response Example For Spoonacular. With this example response and using the Plugin
 
 -   [JSON To Kotlin Class ​(JsonToKotlinClass)​Seal](https://plugins.jetbrains.com/plugin/9960-json-to-kotlin-class-jsontokotlinclass-)
 
