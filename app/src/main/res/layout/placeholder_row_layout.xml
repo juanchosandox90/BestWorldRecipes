@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp">
+
+
+    <View
+        android:id="@+id/imageViewPlaceholder"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/textTitlePlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPlaceholder"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPlaceholder" />
+
+    <View
+        android:id="@+id/textDescPlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintEnd_toEndOf="@+id/textTitlePlaceholder"
+        app:layout_constraintStart_toStartOf="@+id/textTitlePlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/textTitlePlaceholder" />
+
+    <View
+        android:id="@+id/hearIconPlaceHolder"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPlaceholder"
+        app:layout_constraintStart_toStartOf="@+id/textDescPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/textDescPlaceholder" />
+
+    <View
+        android:id="@+id/clockIconPlaceHolder"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintBottom_toBottomOf="@+id/hearIconPlaceHolder"
+        app:layout_constraintEnd_toStartOf="@+id/veganIconPlaceHolder"
+        app:layout_constraintStart_toEndOf="@+id/hearIconPlaceHolder"
+        app:layout_constraintTop_toTopOf="@+id/hearIconPlaceHolder" />
+
+    <View
+        android:id="@+id/veganIconPlaceHolder"
+        android:layout_width="50dp"
+        android:layout_height="61dp"
+        android:background="@color/mediumGray"
+        app:layout_constraintBottom_toBottomOf="@+id/clockIconPlaceHolder"
+        app:layout_constraintEnd_toEndOf="@+id/textDescPlaceholder"
+        app:layout_constraintTop_toTopOf="@+id/clockIconPlaceHolder" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

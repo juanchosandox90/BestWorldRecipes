@@ -11,7 +11,8 @@ class RecipesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        //Method to show the place holder shimmer for future usage.
+        //view.recipesRecyclerView.showShimmer()
         return inflater.inflate(R.layout.fragment_recipes, container, false)
     }
 }
