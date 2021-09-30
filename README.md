@@ -1,5 +1,7 @@
 # Best World Recipes
- This Android App shows a list of the best recipes in the world consuming an API. 
+ This Android App shows a list of the best recipes in the world consuming Spoonacular API
+ 
+ - [Spoonacular API](https://spoonacular.com/food-api/docs) 
 
 
 ## JSON Response Example For Spoonacular. With this example response and using the Plugin
