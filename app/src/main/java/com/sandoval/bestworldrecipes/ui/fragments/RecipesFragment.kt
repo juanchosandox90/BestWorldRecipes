@@ -1,10 +1,11 @@
-package com.sandoval.bestworldrecipes
+package com.sandoval.bestworldrecipes.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.sandoval.bestworldrecipes.R
 
 class RecipesFragment : Fragment() {
     override fun onCreateView(
