@@ -1,6 +1,7 @@
-package com.sandoval.bestworldrecipes
+package com.sandoval.bestworldrecipes.data
 
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
+import com.sandoval.bestworldrecipes.data.network.FoodRecipesApi
 import retrofit2.Response
 import javax.inject.Inject
 

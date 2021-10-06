@@ -1,4 +1,4 @@
-package com.sandoval.bestworldrecipes
+package com.sandoval.bestworldrecipes.data.network
 
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
 import retrofit2.Response
