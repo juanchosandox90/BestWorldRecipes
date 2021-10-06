@@ -1,6 +1,6 @@
 package com.sandoval.bestworldrecipes.di
 
-import com.sandoval.bestworldrecipes.FoodRecipesApi
+import com.sandoval.bestworldrecipes.data.network.FoodRecipesApi
 import com.sandoval.bestworldrecipes.utils.Constants.Companion.URL_BASE
 import dagger.Module
 import dagger.Provides
