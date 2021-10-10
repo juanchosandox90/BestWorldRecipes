@@ -2,10 +2,12 @@ package com.sandoval.bestworldrecipes.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
 import com.sandoval.bestworldrecipes.databinding.RecipesRowLayoutBinding
 import com.sandoval.bestworldrecipes.data.models.Result
+import com.sandoval.bestworldrecipes.utils.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
@@ -43,8 +45,13 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
     }
 
     fun setData(newData: FoodRecipe) {
+        val recipesDiffUtil = RecipesDiffUtil(
+            recipes,
+            newData.results
+        )
+        val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.results
-        notifyDataSetChanged()
+        diffUtilResult.dispatchUpdatesTo(this)
     }
 
 }
