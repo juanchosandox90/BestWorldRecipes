@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sandoval.bestworldrecipes.MainViewModel
+import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.adapters.RecipesAdapter
 import com.sandoval.bestworldrecipes.utils.Constants.Companion.API_KEY
 import com.sandoval.bestworldrecipes.utils.NetworkResult
+import com.sandoval.bestworldrecipes.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
 
@@ -20,21 +21,30 @@ import kotlinx.android.synthetic.main.fragment_recipes.view.*
 class RecipesFragment : Fragment() {
 
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var recipesViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter() }
     private lateinit var mView: View
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         //Method to show the place holder shimmer for future usage.
         //view.recipesRecyclerView.showShimmer()
         mView = inflater.inflate(R.layout.fragment_recipes, container, false)
-        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
         setupRecyclerView()
         requestApiData()
+
         return mView
     }
+
 
     private fun setupRecyclerView() {
         mView.recipesRecyclerView.adapter = mAdapter
@@ -43,7 +53,7 @@ class RecipesFragment : Fragment() {
     }
 
     private fun requestApiData() {
-        mainViewModel.getRecipes(applyQueries())
+        mainViewModel.getRecipes(recipesViewModel.applyQueries())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
                 is NetworkResult.Success -> {
@@ -67,17 +77,6 @@ class RecipesFragment : Fragment() {
         })
     }
 
-    //TODO: Temporary function to mock queries. This will be handled dynamically in the future.
-    private fun applyQueries(): HashMap<String, String> {
-        val queries: HashMap<String, String> = HashMap()
-        queries["number"] = "50"
-        queries["apiKey"] = API_KEY
-        queries["type"] = "snack"
-        queries["diet"] = "vegan"
-        queries["addRecipeInformation"] = "true"
-        queries["fillIngredients"] = "true"
-        return queries
-    }
 
     private fun showShimmerEffect() {
         mView.recipesRecyclerView.showShimmer()
