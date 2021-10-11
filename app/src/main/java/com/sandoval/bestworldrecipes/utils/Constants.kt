@@ -2,8 +2,17 @@ package com.sandoval.bestworldrecipes.utils
 
 class Constants {
     companion object {
-        const val API_KEY = "703f59ee5be04b2190e80afe48b8f9df"
+
+        // [TYPE_YOUR_API_KEY_HERE] - REPLACE BEFORE UPLOAD TO GITHUB!!!
+        const val API_KEY = "[TYPE_YOUR_API_KEY_HERE]"
         const val URL_BASE = "https://api.spoonacular.com"
 
+        //
+        const val QUERY_API_KEY = "apiKey"
+        const val QUERY_NUMBER = "number"
+        const val QUERY_TYPE = "type"
+        const val QUERY_DIET = "diet"
+        const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
+        const val QUERY_FILL_INGREDIENTS = "fillIngredients"
     }
 }

@@ -1,4 +1,4 @@
-package com.sandoval.bestworldrecipes
+package com.sandoval.bestworldrecipes.viewmodels
 
 import android.app.Application
 import android.content.Context
