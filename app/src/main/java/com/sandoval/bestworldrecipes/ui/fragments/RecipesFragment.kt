@@ -15,6 +15,7 @@ import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.adapters.RecipesAdapter
 import com.sandoval.bestworldrecipes.utils.Constants.Companion.API_KEY
 import com.sandoval.bestworldrecipes.utils.NetworkResult
+import com.sandoval.bestworldrecipes.utils.observeOnce
 import com.sandoval.bestworldrecipes.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
@@ -55,9 +56,15 @@ class RecipesFragment : Fragment() {
         showShimmerEffect()
     }
 
+    /** At first implementation the observer was being called twice, first if DB was empty
+     * requestApiData and after that as the observer keep observing, and the DB was not empty
+     * anymore, called mAdapter.setData(database[0].foodRecipe), means called the data from the DB
+     * and DB entity. So this is solved using a property from observers called ObserveOnce from my
+     * Extension Functions. **/
+
     private fun readDatabase() {
         lifecycleScope.launch {
-            mainViewModel.readRecipes.observe(viewLifecycleOwner, { database ->
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, { database ->
                 if (database.isNotEmpty()) {
                     // Log.d("RecipesFragment: ", "Read Database Called")
                     mAdapter.setData(database[0].foodRecipe)
