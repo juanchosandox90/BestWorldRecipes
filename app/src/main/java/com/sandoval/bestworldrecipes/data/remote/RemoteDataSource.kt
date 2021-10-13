@@ -1,4 +1,4 @@
-package com.sandoval.bestworldrecipes.data
+package com.sandoval.bestworldrecipes.data.remote
 
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
 import com.sandoval.bestworldrecipes.data.network.FoodRecipesApi
