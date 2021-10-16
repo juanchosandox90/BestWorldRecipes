@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.215625" />
         <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.21" />
         <entry key="app/src/main/res/layout/placeholder_row_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.33" />
         <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.215625" />
       </map>
@@ -25,5 +26,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
