@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_clock.xml" value="0.38055555555555554" />
         <entry key="app/src/main/res/drawable/ic_error_placeholder.xml" value="0.36944444444444446" />
         <entry key="app/src/main/res/drawable/ic_joke.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/drawable/ic_menubook.xml" value="0.23177083333333334" />
