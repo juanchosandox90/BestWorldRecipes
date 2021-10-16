@@ -49,30 +49,35 @@
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/maincourseChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/main_course_ship_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/sidedishchip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/side_dish_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/dessertChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/dessert_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/appetizerChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/appetizer_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/saladChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/salad_chip_text"
@@ -80,54 +85,63 @@
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/breadChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/bread_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/breakfastChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/breakfast_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/soupChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/soup_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/beverageChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/beverage_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/sauceChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/sauce_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/marinadeChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/marinade_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/fingerfoodChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/fingerfood_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/snackChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/snack_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/drinkChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/drink_chip_text" />
@@ -178,54 +192,63 @@
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/glutenfreeChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/gluten_free_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/KetogenicChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/ketogenic_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/vegetarianChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/vegetarian_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/lactovegetariaChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/lacto_vegetarian_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/ovovegetarianChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/ovo_vegetarian_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/veganChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/vegan_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/pescetarianChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/pescetarian_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/paleoChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/paleo_chip_text" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/primalChip"
+                    style="@style/CustomChipStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/primal_chip_text" />
