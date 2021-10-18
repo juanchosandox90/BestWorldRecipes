@@ -70,7 +70,6 @@ class RecipesFragment : Fragment() {
         lifecycleScope.launch {
             mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, { database ->
                 if (database.isNotEmpty()) {
-                    // Log.d("RecipesFragment: ", "Read Database Called")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
                 } else {
@@ -81,7 +80,6 @@ class RecipesFragment : Fragment() {
     }
 
     private fun requestApiData() {
-        // Log.d("RecipesFragment: ", "Request Api Data Called")
         mainViewModel.getRecipes(recipesViewModel.applyQueries())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
