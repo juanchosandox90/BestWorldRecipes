@@ -2,10 +2,9 @@ package com.sandoval.bestworldrecipes.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -25,7 +24,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class RecipesFragment : Fragment() {
+class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private val args by navArgs<RecipesFragmentArgs>()
 
@@ -60,11 +59,12 @@ class RecipesFragment : Fragment() {
 
         lifecycleScope.launch {
             networkListener = NetworkListener()
-            networkListener.checkNetworkAvailability(requireContext()).collect { status ->
-                recipesViewModel.networkStatus = status
-                recipesViewModel.showNetworkStatus()
-                readDatabase()
-            }
+            networkListener.checkNetworkAvailability(requireContext())
+                .collect { status ->
+                    recipesViewModel.networkStatus = status
+                    recipesViewModel.showNetworkStatus()
+                    readDatabase()
+                }
         }
 
 
@@ -77,7 +77,30 @@ class RecipesFragment : Fragment() {
 
         }
 
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.recipes_menu, menu)
+        initSearchViewOption(menu)
+
+    }
+
+    override fun onQueryTextSubmit(p0: String?): Boolean {
+        return true
+    }
+
+    override fun onQueryTextChange(p0: String?): Boolean {
+        return true
+    }
+
+    private fun initSearchViewOption(menu: Menu) {
+        val search = menu.findItem(R.id.menuSearch)
+        val searchView = search.actionView as? SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
     }
 
     private fun setupRecyclerView() {
@@ -153,4 +176,5 @@ class RecipesFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
