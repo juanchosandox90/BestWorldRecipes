@@ -81,8 +81,10 @@ class RecipesViewModel @Inject constructor(
             Toast.makeText(getApplication(), "No internet connection", Toast.LENGTH_SHORT).show()
             saveBackOnline(true)
         } else if (networkStatus) {
-            Toast.makeText(getApplication(), "We're back online!", Toast.LENGTH_SHORT).show()
-            saveBackOnline(false)
+            if (backOnline) {
+                Toast.makeText(getApplication(), "We're back online!", Toast.LENGTH_SHORT).show()
+                saveBackOnline(false)
+            }
         }
     }
 }
