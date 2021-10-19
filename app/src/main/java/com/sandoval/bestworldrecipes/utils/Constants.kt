@@ -4,10 +4,11 @@ class Constants {
     companion object {
 
         // [TYPE_YOUR_API_KEY_HERE] - REPLACE BEFORE UPLOAD TO GITHUB!!!
-        const val API_KEY = "[TYPE_YOUR_API_KEY_HERE]"
+        const val API_KEY = "6203a956efd54ddb8e4debdc761ef4e6"
         const val URL_BASE = "https://api.spoonacular.com"
 
         // API Queries keys
+        const val QUERY_SEARCH = "query"
         const val QUERY_API_KEY = "apiKey"
         const val QUERY_NUMBER = "number"
         const val QUERY_TYPE = "type"
