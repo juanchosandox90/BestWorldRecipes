@@ -23,4 +23,7 @@
     <color name="uncheckedChipBackgroundColor">@color/lightGray</color>
     <color name="checkedChipTextColor">@color/purple_500</color>
     <color name="uncheckedChipTextColor">@color/darkGray</color>
+
+    <!--Custom Tab Colors-->
+    <color name="actionBarBackgroundColor">@color/purple_500</color>
 </resources>

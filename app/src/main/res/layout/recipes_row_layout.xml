@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp">
+        android:layout_marginBottom="4dp"
+        android:onRecipeClickListener="@{result}">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/row_cardView"
@@ -39,6 +40,7 @@
                     android:id="@+id/recipe_imageView"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
+                    android:contentDescription="@string/recipe_row_layout_image_view_desc"
                     android:loadImageFromUrl="@{result.image}"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -84,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="36dp"
+                    android:contentDescription="@string/recipes_row_layout_likes_image_view_desc"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/heart_textView"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -98,16 +101,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:setNumberOfLikes="@{result.aggregateLikes}"
-                    android:text="100"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/description_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/heart_imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/heart_imageView"
+                    tools:text="100" />
 
                 <ImageView
                     android:id="@+id/clock_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/recipes_row_layout_minutes_imageview_desc"
                     app:layout_constraintEnd_toEndOf="@+id/clock_textView"
                     app:layout_constraintStart_toStartOf="@+id/clock_textView"
                     app:layout_constraintTop_toTopOf="@+id/heart_imageView"
@@ -120,16 +124,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:setMinutes="@{result.readyInMinutes}"
-                    android:text="100"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/heart_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/clock_imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/clock_imageView"
+                    tools:text="100" />
 
                 <ImageView
                     android:id="@+id/leaf_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/recipes_row_layout_vegan_imageview_desc"
                     android:setVeganColor="@{result.vegan}"
                     app:layout_constraintEnd_toEndOf="@+id/leaf_textView"
                     app:layout_constraintStart_toStartOf="@+id/leaf_textView"
@@ -142,10 +147,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:setVeganColor="@{result.vegan}"
-                    android:text="Vegan"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/clock_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/leaf_imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/leaf_imageView"
+                    tools:text="Vegan" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
