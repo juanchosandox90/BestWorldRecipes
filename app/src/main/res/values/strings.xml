@@ -16,6 +16,10 @@
     <string name="heart_icon_desc">hearticon</string>
     <string name="clock_icon_desc">clockicon</string>
     <string name="vegan_icon_desc">veganicon</string>
+    <string name="recipe_row_layout_image_view_desc">recipe image view desc</string>
+    <string name="recipes_row_layout_likes_image_view_desc">likes image view desc</string>
+    <string name="recipes_row_layout_minutes_imageview_desc">minutes imageview desc</string>
+    <string name="recipes_row_layout_vegan_imageview_desc">vegan imageview desc</string>
 
     <!--Bottomsheet Recipes Strings-->
     <!--Meal Type Bottomsheet ChipGroup and Chips Strings-->
@@ -48,8 +52,8 @@
     <string name="primal_chip_text">Primal</string>
     <string name="apply_button_text">Apply</string>
     <string name="recipes_menu_search_title">Search</string>
-    <string name="recipe_row_layout_image_view_desc">recipe image view desc</string>
-    <string name="recipes_row_layout_likes_image_view_desc">likes image view desc</string>
-    <string name="recipes_row_layout_minutes_imageview_desc">minutes imageview desc</string>
-    <string name="recipes_row_layout_vegan_imageview_desc">vegan imageview desc</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
