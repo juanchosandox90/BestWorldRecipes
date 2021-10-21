@@ -3,9 +3,9 @@ package com.sandoval.bestworldrecipes.utils
 import androidx.recyclerview.widget.DiffUtil
 import com.sandoval.bestworldrecipes.data.models.Result
 
-class RecipesDiffUtil(
-    private val oldRecipes: List<Result>,
-    private val newRecipes: List<Result>
+class RecipesDiffUtil<T>(
+    private val oldRecipes: List<T>,
+    private val newRecipes: List<T>
 ) : DiffUtil.Callback() {
 
 
