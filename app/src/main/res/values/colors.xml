@@ -26,4 +26,8 @@
 
     <!--Custom Tab Colors-->
     <color name="actionBarBackgroundColor">@color/purple_500</color>
+
+    <!--Custom Ingredients Colors-->
+    <color name="cardBackgroundColor">@color/white</color>
+    <color name="titleColor">@color/darker</color>
 </resources>
