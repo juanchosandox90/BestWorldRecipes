@@ -10,6 +10,7 @@ import coil.load
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.data.models.Result
 import kotlinx.android.synthetic.main.fragment_overview.view.*
+import org.jsoup.Jsoup
 
 class OverviewFragment : Fragment() {
 
@@ -28,7 +29,14 @@ class OverviewFragment : Fragment() {
         mView.recipeDetailTitleText.text = myBundle?.title
         mView.likesText.text = myBundle?.aggregateLikes.toString()
         mView.minutesText.text = myBundle?.readyInMinutes.toString()
-        mView.summaryTitleText.text = myBundle?.summary
+
+        /** Fix the HTML tags not parsed that came inside the Api Spoonacular
+        mView.summaryText.text = myBundle?.summary **/
+
+        myBundle?.summary.let {
+            val summaryParsed = Jsoup.parse(it).text()
+            mView.summaryText.text = summaryParsed
+        }
 
         if (myBundle?.vegetarian == true) {
             mView.vegetarianImgView.setColorFilter(

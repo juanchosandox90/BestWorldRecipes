@@ -12,6 +12,7 @@ import coil.load
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.data.models.Result
 import com.sandoval.bestworldrecipes.ui.fragments.RecipesFragmentDirections
+import org.jsoup.Jsoup
 import java.lang.Exception
 
 class RecipesRowBinding {
@@ -87,6 +88,15 @@ class RecipesRowBinding {
                 } catch (e: Exception) {
                     Log.e("Exception: ", e.toString())
                 }
+            }
+        }
+
+        @BindingAdapter("android:parseHtmlDesc")
+        @JvmStatic
+        fun parseHtml(textView: TextView, description: String?) {
+            if (description != null) {
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
             }
         }
 
