@@ -14,6 +14,7 @@
     <!--Recipes Row Layout Strings-->
     <string name="recipe_image_view_desc">recipeimageviewdesc</string>
     <string name="heart_icon_desc">hearticon</string>
+    <string name="recipes_row_layout_vegan_text">Vegan</string>
     <string name="clock_icon_desc">clockicon</string>
     <string name="vegan_icon_desc">veganicon</string>
     <string name="recipe_row_layout_image_view_desc">recipe image view desc</string>

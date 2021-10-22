@@ -147,10 +147,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:setVeganColor="@{result.vegan}"
+                    android:text="@string/recipes_row_layout_vegan_text"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/clock_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/leaf_imageView"
-                    tools:text="Vegan" />
+                    app:layout_constraintTop_toBottomOf="@+id/leaf_imageView" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
