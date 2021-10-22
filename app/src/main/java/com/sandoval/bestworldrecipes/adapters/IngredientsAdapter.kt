@@ -11,6 +11,7 @@ import com.sandoval.bestworldrecipes.data.models.ExtendedIngredient
 import com.sandoval.bestworldrecipes.utils.Constants.Companion.BASE_IMAGE_URL
 import com.sandoval.bestworldrecipes.utils.RecipesDiffUtil
 import kotlinx.android.synthetic.main.ingredients_row_layout.view.*
+import java.util.*
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
@@ -33,7 +34,11 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
-        holder.itemView.ingredientTitleText.text = ingredients[position].name.capitalize()
+        holder.itemView.ingredientTitleText.text = ingredients[position].name?.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.getDefault()
+            ) else it.toString()
+        }
         holder.itemView.ingredientAmountText.text = ingredients[position].amount.toString()
         holder.itemView.ingredientUnitText.text = ingredients[position].unit
         holder.itemView.ingredientConsistencyText.text = ingredients[position].consistency
