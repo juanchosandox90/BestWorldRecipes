@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import coil.load
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.data.models.Result
+import com.sandoval.bestworldrecipes.utils.Constants.Companion.RECIPE_RESULT_KEY
 import kotlinx.android.synthetic.main.fragment_overview.view.*
 import org.jsoup.Jsoup
 
@@ -23,7 +24,7 @@ class OverviewFragment : Fragment() {
 
         val args = arguments
 
-        val myBundle: Result? = args?.getParcelable("recipeBundle")
+        val myBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
 
         mView.recipeImgView.load(myBundle?.image)
         mView.recipeDetailTitleText.text = myBundle?.title

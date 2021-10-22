@@ -11,6 +11,7 @@ import com.sandoval.bestworldrecipes.adapters.ViewPagerAdapter
 import com.sandoval.bestworldrecipes.ui.fragments.viewpagerfragments.IngredientsFragment
 import com.sandoval.bestworldrecipes.ui.fragments.viewpagerfragments.InstructionsFragment
 import com.sandoval.bestworldrecipes.ui.fragments.viewpagerfragments.OverviewFragment
+import com.sandoval.bestworldrecipes.utils.Constants.Companion.RECIPE_RESULT_KEY
 import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
@@ -36,7 +37,7 @@ class DetailsActivity : AppCompatActivity() {
         titles.add("Instructions")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable("recipeBundle", args.result)
+        resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
         val pagerAdapter = ViewPagerAdapter(
             resultBundle,

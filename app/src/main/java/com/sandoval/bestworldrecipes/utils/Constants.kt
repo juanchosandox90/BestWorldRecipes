@@ -6,6 +6,8 @@ class Constants {
         // [TYPE_YOUR_API_KEY_HERE] - REPLACE BEFORE UPLOAD TO GITHUB!!!
         const val API_KEY = "[TYPE_YOUR_API_KEY_HERE]"
         const val URL_BASE = "https://api.spoonacular.com"
+        const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
+        const val RECIPE_RESULT_KEY = "recipeBundle"
 
         // API Queries keys
         const val QUERY_SEARCH = "query"
