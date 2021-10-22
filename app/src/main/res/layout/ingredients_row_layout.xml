@@ -11,6 +11,8 @@
         android:id="@+id/row_cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/ingredient_imageView"
+                android:id="@+id/ingredientImgView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="@string/ingredient_fragment_ingredient_imageview_desc"
@@ -47,7 +49,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/ingredient_name"
+                android:id="@+id/ingredientTitleText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -63,37 +65,37 @@
                 tools:text="Name" />
 
             <TextView
-                android:id="@+id/ingredient_amount"
+                android:id="@+id/ingredientAmountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:layout_constraintStart_toStartOf="@+id/ingredient_name"
-                app:layout_constraintTop_toBottomOf="@+id/ingredient_name"
+                app:layout_constraintStart_toStartOf="@+id/ingredientTitleText"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientTitleText"
                 tools:text="100" />
 
             <TextView
-                android:id="@+id/ingredient_unit"
+                android:id="@+id/ingredientUnitText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ingredient_amount"
-                app:layout_constraintStart_toEndOf="@+id/ingredient_amount"
-                app:layout_constraintTop_toTopOf="@+id/ingredient_amount"
+                app:layout_constraintBottom_toBottomOf="@+id/ingredientAmountText"
+                app:layout_constraintStart_toEndOf="@+id/ingredientAmountText"
+                app:layout_constraintTop_toTopOf="@+id/ingredientAmountText"
                 tools:text="Grams" />
 
             <TextView
-                android:id="@+id/ingredient_consistency"
+                android:id="@+id/ingredientConsistencyText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ingredient_amount"
-                app:layout_constraintTop_toBottomOf="@+id/ingredient_amount"
+                app:layout_constraintStart_toStartOf="@+id/ingredientAmountText"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientAmountText"
                 tools:text="Consistency" />
 
             <TextView
-                android:id="@+id/ingredient_original"
+                android:id="@+id/ingredientOriginalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -101,8 +103,8 @@
                 android:layout_marginBottom="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ingredient_consistency"
-                app:layout_constraintTop_toBottomOf="@+id/ingredient_consistency"
+                app:layout_constraintStart_toStartOf="@+id/ingredientConsistencyText"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientConsistencyText"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="Original" />
 
