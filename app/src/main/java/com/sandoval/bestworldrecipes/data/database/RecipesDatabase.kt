@@ -4,10 +4,11 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.sandoval.bestworldrecipes.data.database.dao.RecipesDao
+import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
 import com.sandoval.bestworldrecipes.data.database.entity.RecipesEntity
 
 @Database(
-    entities = [RecipesEntity::class],
+    entities = [RecipesEntity::class, FavoritesEntity::class],
     version = 1,
     exportSchema = false
 )
