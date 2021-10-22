@@ -15,8 +15,6 @@ data class ExtendedIngredient(
     val image: String,
     @SerializedName("name")
     val name: String,
-    @SerializedName("nameClean")
-    val nameClean: String,
     @SerializedName("original")
     val original: String,
     @SerializedName("unit")
