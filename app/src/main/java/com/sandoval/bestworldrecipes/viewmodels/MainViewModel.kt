@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
 import com.sandoval.bestworldrecipes.data.Repository
+import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
 import com.sandoval.bestworldrecipes.data.database.entity.RecipesEntity
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
 import com.sandoval.bestworldrecipes.utils.NetworkResult
@@ -23,12 +24,33 @@ class MainViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     /** ROOM DATABASE */
+
+    /*Recipes Fragment*/
     val readRecipes: LiveData<List<RecipesEntity>> =
         repository.localDataSource.readRecipes().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.localDataSource.insertRecipes(recipesEntity)
+        }
+
+    /*Favorites Fragment*/
+    val readFavoriteRecipes: LiveData<List<FavoritesEntity>> =
+        repository.localDataSource.readFavoriteRecipes().asLiveData()
+
+    private fun insertFavoriteRecipes(favoritesEntity: FavoritesEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.localDataSource.insertFavoriteRecipe(favoritesEntity)
+        }
+
+    private fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.localDataSource.deleteFavoriteRecipe(favoritesEntity)
+        }
+
+    private fun deleteAllFavoritesRecipes() =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.localDataSource.deleteAllFavoriteRecipes()
         }
 
     /** RETROFIT */
