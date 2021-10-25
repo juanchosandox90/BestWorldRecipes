@@ -2,6 +2,7 @@ package com.sandoval.bestworldrecipes.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -94,6 +95,22 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.details_menu, menu)
+        val saveMenuItem = menu?.findItem(R.id.save_to_favorites_menu)
+        checkSavedRecipes(saveMenuItem!!)
         return true
+    }
+
+    private fun checkSavedRecipes(saveMenuItem: MenuItem) {
+        mainViewModel.readFavoriteRecipes.observe(this, { favoritesEntity ->
+            try {
+                for (savedRecipe in favoritesEntity) {
+                    if (savedRecipe.result.id == args.result.id) {
+                        changeMenuItemColor(saveMenuItem, R.color.yellow)
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e("DetailsActivity: ", e.message.toString())
+            }
+        })
     }
 }
