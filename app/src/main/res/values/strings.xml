@@ -73,6 +73,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Ingredient Fragment Strings-->
     <string name="ingredient_fragment_ingredient_imageview_desc">Ingredient content desc</string>
+
+    <!--Details Activity Strings-->
     <string name="details_menu_save_favorites">Save to Favorites</string>
+
+    <!--Favorite Recipes Strings-->
+    <string name="saved_favorite_recipe_snackbar_message">Saved Recipe.</string>
+    <string name="saved_favorite_recipe_snackbar_action">Okay</string>
 </resources>
