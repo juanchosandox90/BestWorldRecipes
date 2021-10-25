@@ -83,4 +83,5 @@
     <!--Favorite Recipes Strings-->
     <string name="saved_favorite_recipe_snackbar_message">Saved Recipe.</string>
     <string name="saved_favorite_recipe_snackbar_action">Okay</string>
+    <string name="remove_favorite_recipe_snackbar_message">Removed from favorites.</string>
 </resources>
