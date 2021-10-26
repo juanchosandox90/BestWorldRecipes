@@ -25,7 +25,11 @@
         android:id="@+id/favoritesReceipesFragment"
         android:name="com.sandoval.bestworldrecipes.ui.fragments.FavoritesRecipesFragment"
         android:label="Favorite Recipes"
-        tools:layout="@layout/fragment_favorites_receipes" />
+        tools:layout="@layout/fragment_favorites_receipes" >
+        <action
+            android:id="@+id/action_favoritesReceipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
         android:name="com.sandoval.bestworldrecipes.ui.fragments.FoodJokeFragment"
