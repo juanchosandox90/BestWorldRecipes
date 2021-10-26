@@ -71,9 +71,6 @@
     <string name="overview_fragment_healthy_imageview_desc">Healthy Imageview Desc</string>
     <string name="overview_fragment_cheap_imageview_desc">Cheap Imageview desc</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!--Ingredient Fragment Strings-->
     <string name="ingredient_fragment_ingredient_imageview_desc">Ingredient content desc</string>
 
@@ -84,4 +81,16 @@
     <string name="saved_favorite_recipe_snackbar_message">Saved Recipe.</string>
     <string name="saved_favorite_recipe_snackbar_action">Okay</string>
     <string name="remove_favorite_recipe_snackbar_message">Removed from favorites.</string>
+    <string name="no_favorite_recipes_text">No Favorite Recipes</string>
+    <string name="no_favorite_recipes_desc">No favorite recipes desc</string>
+    <string name="favorite_recipe_image_view_desc">recipeimageviewdesc</string>
+    <string name="favorite_heart_icon_desc">hearticon</string>
+    <string name="favorite_recipes_row_layout_vegan_text">Vegan</string>
+    <string name="favorite_clock_icon_desc">clockicon</string>
+    <string name="favorite_vegan_icon_desc">veganicon</string>
+    <string name="favorite_recipe_row_layout_image_view_desc">recipe image view desc</string>
+    <string name="favorite_recipes_row_layout_likes_image_view_desc">likes image view desc</string>
+    <string name="favorite_recipes_row_layout_minutes_imageview_desc">minutes imageview desc</string>
+    <string name="favorite_recipes_row_layout_vegan_imageview_desc">vegan imageview desc</string>
+    <string name="favorites_recipes_menu_delete_all_favorites">Delete all</string>
 </resources>

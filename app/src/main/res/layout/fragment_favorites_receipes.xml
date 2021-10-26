@@ -7,14 +7,48 @@
     android:background="@color/lightGray"
     tools:context=".ui.fragments.FavoritesReceipesFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Favorites Fragment"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoritesRecipesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/favorite_recipes_row_layout"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/noFavoritesRecipesImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:alpha="0.5"
+        android:contentDescription="@string/no_favorite_recipes_desc"
+        android:src="@drawable/ic_menubook"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.40"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/noFavoritesRecipesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.5"
+        android:fontFamily="@font/armata"
+        android:text="@string/no_favorite_recipes_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/noFavoritesRecipesImg"
+        app:layout_constraintStart_toStartOf="@+id/noFavoritesRecipesImg"
+        app:layout_constraintTop_toBottomOf="@+id/noFavoritesRecipesImg"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

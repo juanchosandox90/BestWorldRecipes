@@ -9,13 +9,15 @@
         <entry key="app/src/main/res/drawable/ic_joke.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/drawable/ic_menubook.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/drawable/ic_restaurant.xml" value="0.2212962962962963" />
+        <entry key="app/src/main/res/drawable/ic_sad.xml" value="0.5421875" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.5421875" />
         <entry key="app/src/main/res/drawable/ic_start.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/drawable/ic_vegan.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/font/armata.xml" value="0.4740740740740741" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.215625" />
-        <entry key="app/src/main/res/layout/fragment_favorites_receipes.xml" value="0.215625" />
+        <entry key="app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.425" />
+        <entry key="app/src/main/res/layout/fragment_favorites_receipes.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.215625" />
         <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_instructions.xml" value="0.35648148148148145" />
@@ -27,6 +29,7 @@
         <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.215625" />
         <entry key="app/src/main/res/menu/details_menu.xml" value="0.4444444444444444" />
+        <entry key="app/src/main/res/menu/favorite_recipes_menu.xml" value="0.425" />
         <entry key="app/src/main/res/menu/recipes_menu.xml" value="0.33" />
       </map>
     </option>
