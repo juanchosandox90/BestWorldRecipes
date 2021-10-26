@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FavoritesRecipesFragment : Fragment() {
 
-    private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }
+    private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter(requireActivity()) }
     private val mainViewModel: MainViewModel by viewModels()
 
     private var _binding: FragmentFavoritesReceipesBinding? = null
@@ -39,11 +39,6 @@ class FavoritesRecipesFragment : Fragment() {
 
         return binding.root
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.favorite_recipes_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun setupFavoriteRecipesRecyclerView(recyclerView: RecyclerView) {
