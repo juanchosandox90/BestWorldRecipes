@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesReceipesFragment"
-        android:name="com.sandoval.bestworldrecipes.ui.fragments.FavoritesReceipesFragment"
+        android:name="com.sandoval.bestworldrecipes.ui.fragments.FavoritesRecipesFragment"
         android:label="Favorite Recipes"
         tools:layout="@layout/fragment_favorites_receipes" />
     <fragment
