@@ -30,4 +30,9 @@
     <!--Custom Ingredients Colors-->
     <color name="cardBackgroundColor">@color/white</color>
     <color name="titleColor">@color/darker</color>
+
+    <!--Custom Status Bar Contextual Colors-->
+    <color name="statusBarColor">@color/purple_700</color>
+    <color name="contextualStatusBarColor">@color/darker</color>
+    <color name="contextualActionBarColor">@color/dark</color>
 </resources>
