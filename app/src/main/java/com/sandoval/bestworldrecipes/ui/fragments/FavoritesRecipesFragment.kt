@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.adapters.FavoriteRecipesAdapter
+import com.sandoval.bestworldrecipes.databinding.FragmentFavoritesReceipesBinding
 import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_favorites_receipes.view.*
 
 @AndroidEntryPoint
 class FavoritesRecipesFragment : Fragment() {
@@ -18,19 +18,26 @@ class FavoritesRecipesFragment : Fragment() {
     private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }
     private val mainViewModel: MainViewModel by viewModels()
 
+    private var _binding: FragmentFavoritesReceipesBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         setHasOptionsMenu(true)
-        val mView = inflater.inflate(R.layout.fragment_favorites_receipes, container, false)
-        setupFavoriteRecipesRecyclerView(mView.favoritesRecipesRecycler)
+        _binding = FragmentFavoritesReceipesBinding.inflate(
+            inflater,
+            container,
+            false
+        )
+        binding.lifecycleOwner = this
+        binding.mainViewModel = mainViewModel
+        binding.mAdapter = mAdapter
 
-        mainViewModel.readFavoriteRecipes.observe(viewLifecycleOwner, { favoriteRecipesEntity ->
-            mAdapter.setData(favoriteRecipesEntity)
-        })
+        setupFavoriteRecipesRecyclerView(binding.favoritesRecipesRecycler)
 
-        return mView
+        return binding.root
 
     }
 
@@ -42,5 +49,10 @@ class FavoritesRecipesFragment : Fragment() {
     private fun setupFavoriteRecipesRecyclerView(recyclerView: RecyclerView) {
         recyclerView.adapter = mAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
