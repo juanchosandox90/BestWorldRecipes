@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="favoritesEntity"
+            type="com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,6 +41,7 @@
                     android:layout_width="200dp"
                     android:layout_height="0dp"
                     android:contentDescription="@string/favorite_recipe_row_layout_image_view_desc"
+                    android:loadImageFromUrl="@{favoritesEntity.result.image}"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +58,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/armata"
                     android:maxLines="2"
+                    android:text="@{favoritesEntity.result.title}"
                     android:textColor="@color/darker"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -69,6 +74,7 @@
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
+                    android:text="@{favoritesEntity.result.summary}"
                     android:textColor="@color/darkGray"
                     app:layout_constraintEnd_toEndOf="@+id/favoriteTitle_textView"
                     app:layout_constraintStart_toStartOf="@+id/favoriteTitle_textView"
@@ -92,6 +98,7 @@
                     android:id="@+id/favoriteHeart_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:setNumberOfLikes="@{favoritesEntity.result.aggregateLikes}"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/favoriteDescription_textView"
@@ -114,6 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
+                    android:setMinutes="@{favoritesEntity.result.readyInMinutes}"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/favoriteHeart_textView"
@@ -125,6 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/favorite_recipes_row_layout_vegan_imageview_desc"
+                    android:setVeganColor="@{favoritesEntity.result.vegan}"
                     app:layout_constraintEnd_toEndOf="@+id/favoriteLeaf_textView"
                     app:layout_constraintStart_toStartOf="@+id/favoriteLeaf_textView"
                     app:layout_constraintTop_toTopOf="@+id/favoriteClock_imageView"
@@ -135,6 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
+                    android:setVeganColor="@{favoritesEntity.result.vegan}"
                     android:text="@string/favorite_recipes_row_layout_vegan_text"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/favoriteClock_textView"
