@@ -15,6 +15,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/favoriteRecipesRowLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/lightGray"
@@ -46,9 +47,9 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:alpha="0.5"
-            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
             android:contentDescription="@string/no_favorite_recipes_desc"
             android:src="@drawable/ic_menubook"
+            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,11 +65,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:alpha="0.5"
-            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
             android:fontFamily="@font/armata"
             android:text="@string/no_favorite_recipes_text"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/noFavoritesRecipesImg"
             app:layout_constraintStart_toStartOf="@+id/noFavoritesRecipesImg"
