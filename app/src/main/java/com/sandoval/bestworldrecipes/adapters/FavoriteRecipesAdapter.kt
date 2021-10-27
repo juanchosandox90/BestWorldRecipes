@@ -6,15 +6,18 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
 import com.sandoval.bestworldrecipes.databinding.FavoriteRecipesRowLayoutBinding
 import com.sandoval.bestworldrecipes.ui.fragments.FavoritesRecipesFragmentDirections
 import com.sandoval.bestworldrecipes.utils.RecipesDiffUtil
+import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.favorite_recipes_row_layout.view.*
 
 class FavoriteRecipesAdapter(
-    private val requireActivity: FragmentActivity
+    private val requireActivity: FragmentActivity,
+    private val mainViewModel: MainViewModel
 ) : RecyclerView.Adapter<FavoriteRecipesAdapter.MyViewHolder>(),
     ActionMode.Callback {
 
@@ -23,6 +26,7 @@ class FavoriteRecipesAdapter(
     private var selectedRecipes = arrayListOf<FavoritesEntity>()
     private var myViewHolders = arrayListOf<MyViewHolder>()
     private var favoriteRecipes = emptyList<FavoritesEntity>()
+    private lateinit var rootView: View
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder.from(parent)
@@ -30,6 +34,7 @@ class FavoriteRecipesAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         myViewHolders.add(holder)
+        rootView = holder.itemView.rootView
         val currentRecipe = favoriteRecipes[position]
         holder.bind(currentRecipe)
 
@@ -105,6 +110,15 @@ class FavoriteRecipesAdapter(
     }
 
     override fun onActionItemClicked(actionMode: ActionMode?, item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.delete_all_favorites_menu) {
+            selectedRecipes.forEach {
+                mainViewModel.deleteFavoriteRecipe(it)
+            }
+            showSnackBar("${selectedRecipes.size} Recipe/s removed.")
+            multiSelection = false
+            selectedRecipes.clear()
+            actionMode?.finish()
+        }
         return true
     }
 
@@ -169,5 +183,14 @@ class FavoriteRecipesAdapter(
                     "${selectedRecipes.size} ${requireActivity.getString(R.string.favorite_recipes_more_items_selected)}"
             }
         }
+    }
+
+    private fun showSnackBar(message: String) {
+        Snackbar.make(
+            rootView,
+            message,
+            Snackbar.LENGTH_LONG
+        ).setAction("Okay") {}
+            .show()
     }
 }
