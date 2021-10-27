@@ -100,7 +100,7 @@ class FavoriteRecipesAdapter(
     }
 
     override fun onCreateActionMode(actionMode: ActionMode?, menu: Menu?): Boolean {
-        actionMode?.menuInflater?.inflate(R.menu.favorite_recipes_menu, menu)
+        actionMode?.menuInflater?.inflate(R.menu.favorite_contextual_delete_recipes_menu, menu)
         mActionMode = actionMode!!
         applyStatusBarColor(R.color.contextualStatusBarColor)
         return true
