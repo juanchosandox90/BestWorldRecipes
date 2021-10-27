@@ -14,6 +14,7 @@ import com.sandoval.bestworldrecipes.ui.fragments.FavoritesRecipesFragmentDirect
 import com.sandoval.bestworldrecipes.utils.RecipesDiffUtil
 import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.favorite_recipes_row_layout.view.*
+import java.util.*
 
 class FavoriteRecipesAdapter(
     private val requireActivity: FragmentActivity,
@@ -114,7 +115,7 @@ class FavoriteRecipesAdapter(
             selectedRecipes.forEach {
                 mainViewModel.deleteFavoriteRecipe(it)
             }
-            showSnackBar("${selectedRecipes.size} Recipe/s removed.")
+            showSnackBar("${selectedRecipes.size} ${requireActivity.getString(R.string.favorite_recipes_item_removed_snackbar)}")
             multiSelection = false
             selectedRecipes.clear()
             actionMode?.finish()
@@ -190,7 +191,14 @@ class FavoriteRecipesAdapter(
             rootView,
             message,
             Snackbar.LENGTH_LONG
-        ).setAction("Okay") {}
+        )
+            .setAction((requireActivity.getString(R.string.snackbar_action_okay)).lowercase(Locale.getDefault())) {}
             .show()
+    }
+
+    fun clearContextualActionMode() {
+        if (this::mActionMode.isInitialized) {
+            mActionMode.finish()
+        }
     }
 }
