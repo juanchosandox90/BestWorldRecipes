@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.adapters.FavoriteRecipesAdapter
 import com.sandoval.bestworldrecipes.databinding.FragmentFavoritesReceipesBinding
 import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
@@ -54,5 +53,6 @@ class FavoritesRecipesFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        mAdapter.clearContextualActionMode()
     }
 }
