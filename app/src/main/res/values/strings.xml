@@ -97,4 +97,6 @@
     <string name="favorite_recipes_more_items_selected"> items selected</string>
     <string name="favorite_recipes_item_removed_snackbar"> Recipe/s removed.</string>
     <string name="snackbar_action_okay">Okay.</string>
+    <string name="favorite_recipes_menu_delete_all_title">Delete All</string>
+    <string name="favorite_recipes_snackbar_delete_all_message">All recipes removed.</string>
 </resources>

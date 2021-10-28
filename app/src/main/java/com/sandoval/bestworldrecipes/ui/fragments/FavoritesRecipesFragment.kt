@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
+import com.sandoval.bestworldrecipes.R
 import com.sandoval.bestworldrecipes.adapters.FavoriteRecipesAdapter
 import com.sandoval.bestworldrecipes.databinding.FragmentFavoritesReceipesBinding
 import com.sandoval.bestworldrecipes.viewmodels.MainViewModel
@@ -48,6 +50,29 @@ class FavoritesRecipesFragment : Fragment() {
     private fun setupFavoriteRecipesRecyclerView(recyclerView: RecyclerView) {
         recyclerView.adapter = mAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.favorite_recipes_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.deleteAll_favorite_recipes_menu) {
+            mainViewModel.deleteAllFavoritesRecipes()
+            showSnackBar(requireContext().getString(R.string.favorite_recipes_snackbar_delete_all_message))
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun showSnackBar(message: String) {
+        Snackbar.make(
+            binding.root,
+            message,
+            Snackbar.LENGTH_LONG
+        ).setAction(requireContext().getString(R.string.snackbar_action_okay)) {}
+            .show()
     }
 
     override fun onDestroy() {
