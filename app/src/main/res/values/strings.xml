@@ -99,4 +99,7 @@
     <string name="snackbar_action_okay">Okay.</string>
     <string name="favorite_recipes_menu_delete_all_title">Delete All</string>
     <string name="favorite_recipes_snackbar_delete_all_message">All recipes removed.</string>
+    <string name="lorem_ipsum_dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus massa tellus, at auctor nisl pharetra a. Proin a scelerisque mi, vel faucibus dui. Nulla aliquet</string>
+    <string name="fragment_food_joke_no_joke_img_desc">no food joke img desc</string>
+    <string name="fragment__food_joke_no_joke_found_text">No Food Joke Found</string>
 </resources>
