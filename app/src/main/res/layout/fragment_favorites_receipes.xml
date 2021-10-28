@@ -21,25 +21,19 @@
         android:background="@color/lightGray"
         tools:context=".ui.fragments.FavoritesRecipesFragment">
 
-
-        <com.todkars.shimmer.ShimmerRecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favoritesRecipesRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="vertical"
             android:setData="@{mAdapter}"
-            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
+            android:viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shimmer_recycler_layout="@layout/placeholder_row_layout"
-            tools:ignore="SpeakableTextPresentCheck"
             tools:listitem="@layout/favorite_recipes_row_layout" />
 
         <ImageView
@@ -49,7 +43,7 @@
             android:alpha="0.5"
             android:contentDescription="@string/no_favorite_recipes_desc"
             android:src="@drawable/ic_menubook"
-            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
+            android:viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +63,7 @@
             android:text="@string/no_favorite_recipes_text"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:viewVibility="@{mainViewModel.readFavoriteRecipes}"
+            android:viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/noFavoritesRecipesImg"
             app:layout_constraintStart_toStartOf="@+id/noFavoritesRecipesImg"

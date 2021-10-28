@@ -12,7 +12,7 @@ class FavoriteRecipesBinding {
     companion object {
 
         @BindingAdapter(
-            "android:viewVibility",
+            "android:viewVisibility",
             "android:setData",
             requireAll = false
         )
