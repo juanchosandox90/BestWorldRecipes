@@ -1,5 +1,6 @@
 package com.sandoval.bestworldrecipes.data.remote
 
+import com.sandoval.bestworldrecipes.data.models.FoodJoke
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
 import com.sandoval.bestworldrecipes.data.network.FoodRecipesApi
 import retrofit2.Response
@@ -16,5 +17,9 @@ class RemoteDataSource @Inject constructor(
 
     suspend fun searchRecipes(queries: Map<String, String>): Response<FoodRecipe> {
         return foodRecipesApi.searchRecipes(queries)
+    }
+
+    suspend fun getFoodjoke(apiKey: String): Response<FoodJoke> {
+        return foodRecipesApi.getFoodJoke(apiKey)
     }
 }
