@@ -2,6 +2,7 @@ package com.sandoval.bestworldrecipes.data.database.dao
 
 import androidx.room.*
 import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
+import com.sandoval.bestworldrecipes.data.database.entity.FoodJokeEntity
 import com.sandoval.bestworldrecipes.data.database.entity.RecipesEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -25,4 +26,10 @@ interface RecipesDao {
 
     @Query("DELETE FROM favorite_recipes_table")
     suspend fun deleteAllFavoritesRecipes()
+
+    @Query("SELECT * FROM food_joke_table ORDER BY id ASC")
+    fun readFoodJoke(): Flow<List<FoodJokeEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertFoodJoke(foodJokeEntity: FoodJokeEntity)
 }

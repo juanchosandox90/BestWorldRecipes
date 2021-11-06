@@ -2,7 +2,9 @@ package com.sandoval.bestworldrecipes.data.local
 
 import com.sandoval.bestworldrecipes.data.database.dao.RecipesDao
 import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
+import com.sandoval.bestworldrecipes.data.database.entity.FoodJokeEntity
 import com.sandoval.bestworldrecipes.data.database.entity.RecipesEntity
+import com.sandoval.bestworldrecipes.data.models.FoodJoke
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -34,4 +36,14 @@ class LocalDataSource @Inject constructor(
     suspend fun deleteAllFavoriteRecipes() {
         recipesDao.deleteAllFavoritesRecipes()
     }
+
+    /*Food Joke Methods*/
+    suspend fun insertFoodJoke(foodJokeEntity: FoodJokeEntity) {
+        recipesDao.insertFoodJoke(foodJokeEntity)
+    }
+
+    fun readFoodJoke(): Flow<List<FoodJokeEntity>> {
+        return recipesDao.readFoodJoke()
+    }
+
 }

@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import androidx.lifecycle.*
 import com.sandoval.bestworldrecipes.data.Repository
 import com.sandoval.bestworldrecipes.data.database.entity.FavoritesEntity
+import com.sandoval.bestworldrecipes.data.database.entity.FoodJokeEntity
 import com.sandoval.bestworldrecipes.data.database.entity.RecipesEntity
 import com.sandoval.bestworldrecipes.data.models.FoodJoke
 import com.sandoval.bestworldrecipes.data.models.FoodRecipe
@@ -55,6 +56,13 @@ class MainViewModel @Inject constructor(
         }
 
     /* Food joke fragment*/
+    val readFoodJoke: LiveData<List<FoodJokeEntity>> =
+        repository.localDataSource.readFoodJoke().asLiveData()
+
+    private fun insertFoodJoke(foodJokeEntity: FoodJokeEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.localDataSource.insertFoodJoke(foodJokeEntity)
+        }
 
     /** RETROFIT */
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
@@ -112,12 +120,22 @@ class MainViewModel @Inject constructor(
             try {
                 val response = repository.remoteDataSource.getFoodjoke(apiKey)
                 foodJokeResponse.value = handleFoodJokeResponse(response)
+                val foodJoke = foodJokeResponse.value!!.data
+                if (foodJoke != null) {
+                    offlineCacheFoodJoke(foodJoke)
+                }
             } catch (e: Exception) {
                 foodJokeResponse.value = NetworkResult.Error("No Food Joke Found.")
             }
         } else {
             foodJokeResponse.value = NetworkResult.Error("No internet Connection.")
         }
+    }
+
+    /** Cache Food Joke for offline purposes */
+    private fun offlineCacheFoodJoke(foodJoke: FoodJoke) {
+        val foodJokeEntity = FoodJokeEntity(foodJoke)
+        insertFoodJoke(foodJokeEntity)
     }
 
     /** Cache recipes for offline purposes */
